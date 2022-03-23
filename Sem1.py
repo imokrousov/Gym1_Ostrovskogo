@@ -45,4 +45,19 @@ def solve14():
         x //= 16 # x= x//16
     print(s  , counter)
 
-solve14()
+def F(n):
+    if n<=3 : return  n
+    if n%2 == 0 :
+        return n+F(n-1)
+    else :
+        return n*n+F(n-2)
+
+def solve16():
+    counter = 0
+    for i in range(1,1500):
+        if F(i) < 10**8:
+            counter +=1
+    print(counter)
+
+
+solve16()
